@@ -1,29 +1,26 @@
 const express = require('express');
+const path = require('path');
+const bmiRoutes = require('./routes/bmiRoutes');
+
 const app = express();
 const port = 3000;
 
-// Routes
+app.use(express.json());
+
+// Route for serving the index.html page
 app.get('/', (req, res) => {
-    res.send('This is our first endpoint!')
+    res.sendFile(path.join(__dirname, 'src', 'index.html')); // Send the HTML file when visiting the root URL
 });
 
+// Route for serving the BMI calculator
 app.get('/bmicalculator', (req, res) => {
-    res.sendFile('src/index.html', { root: __dirname }, function(err) {
-        if (err) {
-            console.error('Error sending file:', err);
-        } else {
-            console.log('Sent: index.html');
-        }
-    });
+    res.sendFile(path.join(__dirname, 'src', 'index.html')); // Send the HTML file when visiting /bmicalculator
 });
 
-app.post('/bmicalculator', (req, res) => {
+// Use the BMI routes for calculation
+app.use('/bmicalculator', bmiRoutes);
 
-});
-
-
-
-// Listen
+// Listen on the defined port
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`Server is running on http://localhost:${port}`);
 });

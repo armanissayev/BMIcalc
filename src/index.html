@@ -10,7 +10,7 @@
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 class="text-2xl font-bold text-gray-700 text-center mb-4">BMI Calculator</h1>
         <form id="bmiForm">
-            <!-- Основные параметры -->
+            
             <div class="mb-4">
                 <label for="height" class="block text-gray-600 mb-2">Height (cm):</label>
                 <input type="number" id="height" class="w-full border border-gray-300 rounded-lg px-4 py-2" required>
@@ -27,7 +27,7 @@
                 </select>
             </div>
 
-            <!-- Дополнительные параметры -->
+            
             <div id="extraParams" class="hidden">
                 <div class="mb-4">
                     <label for="age" class="block text-gray-600 mb-2">Age:</label>
@@ -44,13 +44,13 @@
             </div>
             <button type="button" id="toggleExtra" class="text-blue-500 mb-4">+ Show Extra Parameters</button>
 
-            <!-- Кнопка расчета -->
+            
             <button type="button" onclick="calculateBMI()" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
                 Calculate BMI
             </button>
         </form>
 
-        <!-- Результаты -->
+        
         <div id="result" class="mt-6 hidden p-4 rounded-lg shadow">
             <h2 class="text-lg font-bold text-gray-700">Result:</h2>
             <p id="bmiValue" class="text-gray-600 mt-2"></p>
@@ -58,14 +58,14 @@
     </div>
 
     <script>
-        // Логика показа/скрытия дополнительных параметров
+        
         document.getElementById('toggleExtra').addEventListener('click', function () {
             const extraParams = document.getElementById('extraParams');
             extraParams.classList.toggle('hidden');
             this.textContent = extraParams.classList.contains('hidden') ? '+ Show Extra Parameters' : '- Hide Extra Parameters';
         });
 
-        // Расчет BMI и отправка/получение данных с бэкенда
+        
         async function calculateBMI() {
             const height = parseFloat(document.getElementById('height').value);
             const weight = parseFloat(document.getElementById('weight').value);
@@ -74,7 +74,6 @@
             const activity = document.getElementById('activity').value || null;
 
             if (height > 0 && weight > 0) {
-                // Подготовка данных для отправки на сервер
                 const requestData = {
                     height: height,
                     weight: weight,
@@ -84,7 +83,6 @@
                 };
 
                 try {
-                    // Отправка запроса на сервер
                     const response = await fetch('http://localhost:3000/bmicalculator', {
                         method: 'POST',
                         headers: {
@@ -93,7 +91,6 @@
                         body: JSON.stringify(requestData)
                     });
 
-                    // Обработка ответа от сервера
                     const resultData = await response.json();
                     const resultDiv = document.getElementById('result');
                     const bmiValue = document.getElementById('bmiValue');

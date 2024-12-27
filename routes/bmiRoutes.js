@@ -61,8 +61,8 @@ function getHealthAdvice(bmi, age, gender, activity) {
 router.post('/', (req, res) => {
     const { height, weight, gender, age, activity } = req.body;
 
-    if (!height || !weight || !age) {
-        return res.status(400).json({ error: 'Height, weight, and age are required' });
+    if (!height || !weight) {
+        return res.status(400).json({ error: 'Height and weight are required' });
     }
 
     const bmi = calculateBMI(weight, height);

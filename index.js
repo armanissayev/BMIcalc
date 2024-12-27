@@ -12,11 +12,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'src', 'index.html')); // Send the HTML file when visiting the root URL
 });
 
-// Route for serving the BMI calculator
-app.get('/bmicalculator', (req, res) => {
-    res.sendFile(path.join(__dirname, 'src', 'index.html')); // Send the HTML file when visiting /bmicalculator
-});
-
 // Use the BMI routes for calculation
 app.use('/bmicalculator', bmiRoutes);
 

@@ -18,7 +18,7 @@ app.get('/bmicalculator', (req, res) => {
 });
 
 app.post('/bmicalculator', (req, res) => {
-    
+
 });
 
 

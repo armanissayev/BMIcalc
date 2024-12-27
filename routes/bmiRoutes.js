@@ -8,7 +8,7 @@ function calculateBMI(weight, height) {
 
 function getBMICategory(bmi, age) {
     if (age < 18) {
-        return '';
+        return 'For individuals under 18, health advice should be obtained from a pediatrician.';
     } else if (age >= 65) {
         if (bmi < 22) return 'Underweight';
         if (bmi < 27) return 'Normal weight';
@@ -35,7 +35,7 @@ function getBMIColor(category) {
 function getHealthAdvice(bmi, age, gender, activity) {
     let advice = '';
     if (age < 18) {
-        advice = 'For individuals under 18, health advice should be obtained from a pediatrician.';
+        advice = '';
     } else {
         if (bmi < 18.5) {
             advice = 'You may need to gain some weight. Consider consulting a nutritionist for a balanced diet plan.';

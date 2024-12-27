@@ -14,6 +14,18 @@ After you install this repo, you need to install all Node.js modules so it can b
   npm install
 ```
 
+## Go to Project Directory
+Before running the server, navigate to the project directory. Use the following command in your terminal:
+```
+  cd BMIcalc
+```
+If this command doesn't work, locate the folder where the project was unpacked, copy its full path, and use the following command instead:
+```
+  cd [full_path_to_project]
+```
+Replace [full_path_to_project] with the actual path you copied.
+
+
 ## Run server
 In order to run the server on your localhost you neeed to run this command in your terminal
 ```

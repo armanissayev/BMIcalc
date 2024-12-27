@@ -8,7 +8,7 @@ function calculateBMI(weight, height) {
 
 function getBMICategory(bmi, age) {
     if (age < 18) {
-        return 'For individuals under 18, BMI categories vary by age and gender. Please consult a pediatrician.';
+        return '';
     } else if (age >= 65) {
         if (bmi < 22) return 'Underweight';
         if (bmi < 27) return 'Normal weight';

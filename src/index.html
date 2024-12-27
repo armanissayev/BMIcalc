@@ -95,7 +95,7 @@
                     const resultDiv = document.getElementById('result');
                     const bmiValue = document.getElementById('bmiValue');
 
-                    bmiValue.textContent = `Your BMI is ${resultData.bmi} (${resultData.category}).`;
+                    bmiValue.textContent = `Your BMI is ${resultData.bmi} (${resultData.category}). ${resultData.healthAdvice}`;
                     resultDiv.className = `mt-6 p-4 rounded-lg shadow ${resultData.color}`;
                     resultDiv.classList.remove('hidden');
                 } catch (error) {

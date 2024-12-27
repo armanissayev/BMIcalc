@@ -1,5 +1,5 @@
 {
-  "name": "BMIcalculator",
+  "name": "bmicalculator",
   "version": "1.0.0",
   "description": "BMI calc server-side",
   "main": "index.js",
@@ -16,5 +16,14 @@
   "dependencies": {
     "express": "^4.21.2",
     "nodemon": "^3.1.9"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armanissayev/BMIcalc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/armanissayev/BMIcalc/issues"
+  },
+  "homepage": "https://github.com/armanissayev/BMIcalc#readme"
 }
